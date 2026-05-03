@@ -4,6 +4,55 @@
 
 Deploy the `backend` folder as a Node.js service.
 
+### Vercel Backend
+
+The backend now includes Vercel adapter files:
+
+```text
+backend/api/index.js
+backend/vercel.json
+```
+
+Vercel project settings:
+
+```text
+Root Directory: backend
+Framework Preset: Other
+Build Command: npm install
+Output Directory: leave empty
+Install Command: npm install
+```
+
+Set production environment variables from:
+
+```text
+backend/.env.production.example
+```
+
+After deployment, your backend URL will look like:
+
+```text
+https://your-backend-project.vercel.app
+```
+
+API base URL:
+
+```text
+https://your-backend-project.vercel.app/api/v1
+```
+
+Health check:
+
+```text
+https://your-backend-project.vercel.app/health
+```
+
+Important Vercel note: uploaded files saved through `/storage` are not permanent on Vercel Functions. Product/category/banner images should use external image URLs or a storage service such as Supabase Storage/Cloudinary for production.
+
+### Node Service Backend
+
+If you deploy to Render/Railway/VPS instead of Vercel, use this mode.
+
 Use these commands:
 
 ```powershell
